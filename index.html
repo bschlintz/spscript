@@ -59,24 +59,71 @@
     <a id="web" class="anchor" href="#web" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web</h4>
         <ul>
             <li>
-                <a href='docs/Web.html#info'><code>web.info()</code></a> - Gets you the <a href="https://msdn.microsoft.com/en-us/library/office/jj245288.aspx#properties">SPWeb properties</a> of your site
+                <a href='docs/Web.html#info'>
+                    <code>web.info()</code>
+                </a>
+                 - Gets you the 
+                 <a href="https://msdn.microsoft.com/en-us/library/office/jj245288.aspx#properties">SPWeb properties</a> 
+                 of your site
             </li>
             <li>
-                <a href='docs/Web.html#subsites'><code>web.subsites()</a></code> - Gets you all the sub sites and their <a href="https://msdn.microsoft.com/en-us/library/office/jj245288.aspx#properties">SPWeb properties</a>
+                <a href='docs/Web.html#subsites'>
+                    <code>web.subsites()</code>
+                </a> 
+                - Gets you all the sub sites and their 
+                <a href="https://msdn.microsoft.com/en-us/library/office/jj245288.aspx#properties">SPWeb properties</a>
             </li>
+
+            <li>
+                <a href='docs/Web.html#getUser'>
+                  <code>web.getUser(email)</code>
+                </a>
+                - Gets you a SP.User object based on the specified email
+            </li>
+
+            <li>
+                <a href='docs/Web.html#getFile'>
+                  <code>web.getFile(serverRelativeUrl)</code>
+                </a>
+                - Gets you an SP.File object
+            </li>
+
+            <li>
+                <a href='docs/Web.html#copyFile'>
+                  <code>web.copyFile(sourceUrl, destinationUrl, [digest])</code>
+                </a>
+                - Copies a file (both source and destination urls are server relative)
+            </li>
+
+            <li>
+                <a href='docs/Web.html#deleteFile'>
+                  <code>web.deleteFile(fileUrl, [digest])</code>
+                </a>
+                - Deletes the file at the specified server relative url
+            </li>
+
             <li>
                 <a href='docs/Web.html#uploadFile'>
                   <code>web.uploadFile(fileContent, serverRelativeFolderPath, [fields], [digest])</code>
-                </a> - Allows up to upload files to the specified folder. Pass an optional object of fields to set when the upload finishes.
-              </li>
+                </a>
+                - Allows up to upload files to the specified folder. Pass an optional object of fields to set when the upload finishes.
+            </li>
+
 
             <li>
-                <a href='docs/Permissions.html#getRoleAssignments'><code>web.permissions.getRoleAssignments()</code></a> - Gets you an an array of permissions that have been setup for that site. Each permission object has a <code>member</code> (the user or group) and a <code>roles</code> array (the permissions that user or group has). </li>
+                <a href='docs/Permissions.html#getRoleAssignments'>
+                    <code>web.permissions.getRoleAssignments()</code>
+                </a>
+                 - Gets you an an array of permissions that have been setup for that site. Each permission object has a <code>member</code> (the user or group) and a <code>roles</code> array (the permissions that user or group has). 
+            </li>
             <li>
-                <a href='docs/Permissions.html#check'><code>web.permissions.check([email])</code></a> - Looks up a user by their email address (current user if no email is passed), then gets you a list of permissions that user has for your site. Similiar to "Check Permissions". </li>
+                <a href='docs/Permissions.html#check'>
+                    <code>web.permissions.check([email])</code>
+                </a>
+                 - Looks up a user by their email address (current user if no email is passed), then gets you a list of permissions that user has for your site. Similiar to "Check Permissions". 
+             </li>
         </ul>
-        <h4>
-          <a id="lists" class="anchor" href="#lists" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lists</h4>
+        <h4>Lists</h4>
         <ul>
             <li>
                 <a href='docs/RestDao.html#lists'><code>lists()</code></a> - gets you all the lists and libraries on your site and their <a href="https://msdn.microsoft.com/en-us/library/office/jj245826.aspx#properties">SPList properties</a>
@@ -84,8 +131,9 @@
             <li>
                 <a href='docs/RestDao.html#lists'><code>lists(listname)</code></a> - gets you a list object for a specific list. See the '<strong>List</strong>' methods for what you can do with this object</li>
         </ul>
-        <h4>
-            <a id="list" class="anchor" href="#list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>List</h4>
+
+
+        <h4>List</h4>
         <ul>
             <li>
                 <a href='docs/List.html#info'><code>list.info()</code></a> - gets you that list's <a href="https://msdn.microsoft.com/en-us/library/office/jj245826.aspx#properties">SPList properties</a>
@@ -113,18 +161,19 @@
             <li>
                 <a href='docs/Permissions.html#check'><code>list.permissions.check([email])</code></a> - Looks up a user by their email address (current user if no email is passed), then gets the permissions that user has for that list. Similiar to "Check Permissions". </li>
         </ul>
-        <h4>
-                                  <a id="search" class="anchor" href="#search" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Search</h4>
+
+        <h4>Search</h4>
         <ul>
             <li>
                 <a href='docs/Search.html#query'><code>search.query(queryText)</code></a> - performs a SharePoint search and returns a <code>SearchResults</code> object which contains elapsedTime, suggestion, resultsCount, totalResults, totalResultsIncludingDuplicates, items. The <code>items</code> property is what contains the actual "results" array.</li>
             <li>
                 <a href='docs/Search.html#query'><code>search.query(queryText, queryOptions)</code></a> - same as <code>query(queryText)</code> but with the ability to override default search options.</li>
             <li>
-                <a href='docs/Search.html#people'><code>search.people(queryText)</code></a> limits the search to just people</li>
+                <a href='docs/Search.html#people'><code>search.people(queryText)</code></a> limits the search to just people
+            </li>
         </ul>
-        <h4>
-                                        <a id="profiles" class="anchor" href="#profiles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Profiles</h4>
+
+        <h4>Profiles</h4>
         <ul>
             <li>
                 <a href='docs/Profiles.html#current'><code>profiles.current()</code></a> - gets you all the profile properties for the current user</li>
@@ -135,8 +184,8 @@
             <li>
                 <a href='docs/Profiles.html#setProperty'><code>profiles.setProperty(email, key, value)</code></a> - sets a profile property (key) for the user tied to that email address</li>
         </ul>
-        <h4>
-                                                <a id="utils" class="anchor" href="#utils" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Utils</h4>
+
+        <h4>Utils</h4>
         <ul>
             <li>
                 <a href='docs/SPScript.utils.html#.waitForLibrary'><code>utils.waitForLibrary(namespace)</code></a> - waits for the library to be on the page</li>
@@ -147,142 +196,125 @@
             <li>
                 <a href='docs/SPScript.utils.html#.getScripts'><code>utils.getScripts(urls)</code></a> - loads multiple javascript files onto the page</li>
         </ul>
-        <h4>
-                                                        <a id="query-string-helpers" class="anchor" href="#query-string-helpers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Query String Helpers</h4>
+
+        <h4>Query String Helpers</h4>
         <ul>
             <li>
                 <a href='docs/SPScript.queryString.html#.toObj'><code>queryString.toObj(str)</code></a> - returns a javascript object. Each query string key is a property on the object.</li>
             <li>
                 <a href='docs/SPScript.queryString.html#.fromObj'><code>queryString.fromObj(str)</code></a> - turns a javascript object into a string in format of "key1=value1&amp;key2=value2"</li>
         </ul>
-        <h4>
-                                                            <a id="templating" class="anchor" href="#templating" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Templating</h4>
+        <h4>Templating</h4>
         <ul>
             <li>
-                <code>templating.renderTemplate(template, item)</code> - returns an html string. <code>template</code> is an html string with <code>{{property}}</code> placeholders. <code>item</code> is a javascript object whose properties will be used to fill in your html placeholders.</li>
+                <code>templating.render(template, item)</code>
+                 - returns an html string. <code>template</code>  is an html string with `{{property}}` placeholders. Uses Mustache.js
+             </li>
         </ul>
         <hr>
-        <h2>
-                                                            <a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Examples</h2>
-        <h4>
-                                                            <a id="query-list-items" class="anchor" href="#query-list-items" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Query List Items</h4>
+
+        <h2>Usage Examples</h2>
+
+        <h4>Query List Items</h4>
+
         <p>Get all <strong>"Tasks"</strong> with a status of <strong>"Approved"</strong></p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> taskList <span class="pl-k">=</span> <span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>)
-                                                            <span class="pl-c">// BEST: Option 1 - 'Find' syntax sugar</span>
-                                                            <span class="pl-smi">taskList</span>.<span class="pl-en">findItems</span>(<span class="pl-s"><span class="pl-pds">"</span>Status<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Approved<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(logApprovedTasks);
-                                                            <span class="pl-c">// BETTER: Option 2 - OData support in the '.items()'</span>
-                                                            <span class="pl-smi">taskList</span>.<span class="pl-en">getItems</span>(<span class="pl-s"><span class="pl-pds">"</span>$filter=Status eq 'Approved'<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(logApprovedTasks);
-                                                            <span class="pl-c">// GOOD: Options 3 - Manual 'GET'</span>
-                                                            <span class="pl-smi">dao</span>.<span class="pl-en">get</span>(<span class="pl-s"><span class="pl-pds">"</span>/web/lists/getByTitle('Tasks')?$filter=Status eq 'Approved'<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){
-                                                                <span class="pl-k">if</span> (data <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>) {
-                                                                    <span class="pl-en">logApprovedTasks</span>(<span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>);    
-                                                                }
-                                                            });
-                                                            <span class="pl-k">var</span> <span class="pl-en">logApprovedTasks</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">tasks</span>) {
-                                                                <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
-                                                                    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
-                                                                });
-                                                          };</pre></div>
-        <h4>
-                                                          <a id="get-item-by-id" class="anchor" href="#get-item-by-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Item By Id</h4>
+
+        <div class="highlight highlight-source-js">
+            <pre>
+<span class="pl-k">var</span> taskList <span class="pl-k">=</span> <span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>)
+<span class="pl-c">// BEST: Option 1 - 'Find' syntax sugar</span>
+<span class="pl-smi">taskList</span>.<span class="pl-en">findItems</span>(<span class="pl-s"><span class="pl-pds">"</span>Status<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Approved<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(logApprovedTasks);
+<span class="pl-c">// BETTER: Option 2 - OData support in the '.items()'</span>
+<span class="pl-smi">taskList</span>.<span class="pl-en">getItems</span>(<span class="pl-s"><span class="pl-pds">"</span>$filter=Status eq 'Approved'<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(logApprovedTasks);
+<span class="pl-c">// GOOD: Options 3 - Manual 'GET'</span>
+<span class="pl-smi">dao</span>.<span class="pl-en">get</span>(<span class="pl-s"><span class="pl-pds">"</span>/web/lists/getByTitle('Tasks')?$filter=Status eq 'Approved'<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){
+    <span class="pl-k">if</span> (data <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>) {
+        <span class="pl-en">logApprovedTasks</span>(<span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>);    
+    }
+});
+<span class="pl-k">var</span> <span class="pl-en">logApprovedTasks</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">tasks</span>) {
+    <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
+    });
+                                                          };
+            </pre>
+        </div>
+        <h4>Get Item By Id</h4>
         <p>Get the task with a SharePoint ID of 29</p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">getItemById</span>(<span class="pl-c1">29</span>).<span class="pl-en">then</span>(displayTask);
-                                                          <span class="pl-k">var</span> <span class="pl-en">displayTask</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">task</span>) {
-                                                              <span class="pl-c">//blah blah blah</span>
-                                                          }
-                                                        </pre></div>
-        <h4>
-                                                        <a id="add-list-item" class="anchor" href="#add-list-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add List Item</h4>
-        <p>Add item to the <strong>"Tasks"</strong> list</p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> newItem <span class="pl-k">=</span> { 
-                                                            Title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>My New Task<span class="pl-pds">"</span></span>, 
-                                                            Status<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Not Started<span class="pl-pds">"</span></span>, 
-                                                            RemainingHours<span class="pl-k">:</span> <span class="pl-c1">12</span> 
-                                                        };
-                                                        <span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">addItem</span>(newItem);
-                                                      </pre></div>
-        <h4>
-                                                      <a id="update-list-item" class="anchor" href="#update-list-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update List Item</h4>
-        <p>Update item in the <strong>"Tasks"</strong> list. Set item 29's status to <strong>"Completed"</strong></p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> updates <span class="pl-k">=</span> { Status<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Completed<span class="pl-pds">"</span></span>, RemainingHours<span class="pl-k">:</span> <span class="pl-c1">0</span> };
-                                                      <span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">updateItem</span>(<span class="pl-c1">29</span>, updates);
-                                                    </pre></div>
-        <h4>
-                                                    <a id="find-one" class="anchor" href="#find-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Find One</h4>
+        <div class="highlight highlight-source-js">
+            <pre>
+<span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">getItemById</span>(<span class="pl-c1">29</span>).<span class="pl-en">then</span>(displayTask);
+<span class="pl-k">var</span> <span class="pl-en">displayTask</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">task</span>) {
+  <span class="pl-c">//blah blah blah</span>
+}
+</pre></div>
+<h4>
+<a id="add-list-item" class="anchor" href="#add-list-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add List Item</h4>
+<p>Add item to the <strong>"Tasks"</strong> list</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> newItem <span class="pl-k">=</span> { 
+Title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>My New Task<span class="pl-pds">"</span></span>, 
+Status<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Not Started<span class="pl-pds">"</span></span>, 
+RemainingHours<span class="pl-k">:</span> <span class="pl-c1">12</span> 
+};
+<span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">addItem</span>(newItem);
+</pre></div>
+<h4>
+<a id="update-list-item" class="anchor" href="#update-list-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update List Item</h4>
+<p>Update item in the <strong>"Tasks"</strong> list. Set item 29's status to <strong>"Completed"</strong></p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> updates <span class="pl-k">=</span> { Status<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Completed<span class="pl-pds">"</span></span>, RemainingHours<span class="pl-k">:</span> <span class="pl-c1">0</span> };
+<span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>).<span class="pl-en">updateItem</span>(<span class="pl-c1">29</span>, updates);
+        </pre></div>
+        <h4>Find One</h4>
         <p>Get the one item whose <strong>"RequestId"</strong> is <strong>"abc123"</strong></p>
+
         <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>IT Requests<span class="pl-pds">"</span></span>)
-                                                        .<span class="pl-en">findItem</span>(<span class="pl-s"><span class="pl-pds">"</span>RequestId<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>abc123<span class="pl-pds">"</span></span>)
-                                                        .<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">request</span>){
-                                                            <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">request</span>.<span class="pl-smi">RequestId</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>: <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">request</span>.<span class="pl-smi">Title</span>);
-                                                        });
+.<span class="pl-en">findItem</span>(<span class="pl-s"><span class="pl-pds">"</span>RequestId<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>abc123<span class="pl-pds">"</span></span>)
+.<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">request</span>){
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">request</span>.<span class="pl-smi">RequestId</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>: <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">request</span>.<span class="pl-smi">Title</span>);
+});
                                                   </pre></div>
         <p>If there is more than one match, it will return the first result. If there are zero matches, it will return <code>null</code></p>
-        <h4>
-                                                  <a id="get-every-list-item" class="anchor" href="#get-every-list-item" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Every List Item</h4>
+        <h4>Get Every List Item</h4>
         <p>Get all items in the <strong>"Tasks"</strong> list and log the 'Title'</p>
         <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Tasks<span class="pl-pds">"</span></span>)
-                                                      .<span class="pl-en">getItems</span>()
-                                                      .<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">tasks</span>){
-                                                          <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
-                                                              <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
-                                                          });
-                                                      });
-                                                </pre></div>
-        <h4>
-                                                <a id="get--post-requests" class="anchor" href="#get--post-requests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GET &amp; POST Requests</h4>
+.<span class="pl-en">getItems</span>()
+.<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">tasks</span>){
+  <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
+  });
+});
+        </pre></div>
+
+        <h4>GET &amp; POST Requests</h4>
         <p>Every REST Api call that SharePoint supports can be called using SPService. Both the RestDao and CrossDomainDao implement a <code>.get()</code> and <code>post()</code> method that allow you to type in the api call's relative url. For example, you could rewrite the code above as:</p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-en">get</span>(<span class="pl-s"><span class="pl-pds">"</span>/web/lists/getByTitle('Tasks')/items<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){
-                                                    <span class="pl-k">var</span> tasks <span class="pl-k">=</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>;
-                                                    <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
-                                                        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
-                                                    });
-                                              });</pre></div>
-        <h4>
-                                              <a id="profiles-1" class="anchor" href="#profiles-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Profiles</h4>
+
+        <div class="highlight highlight-source-js">
+        <pre><span class="pl-smi">dao</span>.<span class="pl-en">get</span>(<span class="pl-s"><span class="pl-pds">"</span>/web/lists/getByTitle('Tasks')/items<span class="pl-pds">"</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>){
+    <span class="pl-k">var</span> tasks <span class="pl-k">=</span> <span class="pl-smi">data</span>.<span class="pl-smi">d</span>.<span class="pl-smi">results</span>;
+    <span class="pl-smi">tasks</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">task</span>){
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">task</span>.<span class="pl-smi">Title</span>);
+    });
+});</pre></div>
+        <h4>Profiles</h4>
         <p>Get the current user's profile properties</p>
         <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-smi">profiles</span>.<span class="pl-c1">current</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">profile</span>){
-                                                  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">JSON</span>.<span class="pl-en">stringify</span>(profile));
-                                            });</pre></div>
-        <h4>
-                                            <a id="search-1" class="anchor" href="#search-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Search</h4>
-        <p>Search for <strong>"petersen"</strong> and get the url of each search result</p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-smi">search</span>.<span class="pl-en">query</span>(<span class="pl-s"><span class="pl-pds">'</span>petersen<span class="pl-pds">'</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">searchResults</span>){
-                                                <span class="pl-smi">searchResults</span>.<span class="pl-smi">items</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">item</span>){
-                                                    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">item</span>.<span class="pl-smi">FileRef</span>);
-                                                });
-                                          });</pre></div>
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">JSON</span>.<span class="pl-en">stringify</span>(profile));
+});</pre></div>
+<h4>
+<a id="search-1" class="anchor" href="#search-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Search</h4>
+<p>Search for <strong>"petersen"</strong> and get the url of each search result</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-smi">search</span>.<span class="pl-en">query</span>(<span class="pl-s"><span class="pl-pds">'</span>petersen<span class="pl-pds">'</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">searchResults</span>){
+    <span class="pl-smi">searchResults</span>.<span class="pl-smi">items</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">item</span>){
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">item</span>.<span class="pl-smi">FileRef</span>);
+    });
+});</pre></div>
+
         <p>Search for People named <strong>"petersen"</strong></p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-smi">dao</span>.<span class="pl-smi">search</span>.<span class="pl-en">people</span>(<span class="pl-s"><span class="pl-pds">'</span>petersen<span class="pl-pds">'</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">searchResults</span>){
-                                              <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>There are <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">searchResults</span>.<span class="pl-smi">totalResults</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> people named 'andrew'<span class="pl-pds">"</span></span>);
-                                        });</pre></div>
-        <h4>
-                                        <a id="templating-1" class="anchor" href="#templating-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Templating</h4>
-        <p>SPScript contains a lightweigt templating engine. This allows you start with html with `<code>{{property}}</code> placeholders and then fill in the values and display on the page after you have finished getting all your REST data.</p>
-        <p>Display document name and category on the page</p>
-        <p>Step 1: Create the html container</p>
-        <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">'</span>docs-webpart<span class="pl-pds">'</span></span>&gt;<span class="pl-c">&lt;!-- Template html will be injected here --&gt;</span>&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
-        <p>Step 2: Create a template using a script tag with a custom type</p>
-        <div class="highlight highlight-text-html-basic"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">'</span>custom/template<span class="pl-pds">'</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">'</span>doc-template<span class="pl-pds">'</span></span>&gt;</span>
-                                        <span class="pl-s1">    <span class="pl-k">&lt;</span>div <span class="pl-k">class</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>document<span class="pl-pds">'</span></span><span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">        <span class="pl-k">&lt;</span>a href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>{{FileRef}}<span class="pl-pds">'</span></span><span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">            <span class="pl-k">&lt;</span>h3<span class="pl-k">&gt;</span>{{FileRef}}<span class="pl-k">&lt;</span><span class="pl-k">/</span>h3<span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">            <span class="pl-k">&lt;</span>h4<span class="pl-k">&gt;</span>{{Category}}<span class="pl-k">&lt;</span><span class="pl-k">/</span>h4<span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">        <span class="pl-k">&lt;</span><span class="pl-k">/</span>a<span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">    <span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></span>
-                                        <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
-        <p>Step 3: Use the RestDao to get the documents, and the templating to render them on the page.</p>
-        <div class="highlight highlight-source-js"><pre><span class="pl-c">//select our template</span>
-                                        <span class="pl-k">var</span> template <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#doc-template<span class="pl-pds">"</span></span>).<span class="pl-en">html</span>();
-                                        <span class="pl-c">//Get our documents</span>
-                                        <span class="pl-smi">dao</span>.<span class="pl-en">lists</span>(<span class="pl-s"><span class="pl-pds">"</span>Documents<span class="pl-pds">"</span></span>).<span class="pl-en">getItems</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">docs</span>){
-                                            <span class="pl-k">var</span> html <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>;
-                                            <span class="pl-c">//foreach document, create the html based on our template</span>
-                                            <span class="pl-smi">docs</span>.<span class="pl-en">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">doc</span>){
-                                                html <span class="pl-k">+=</span> <span class="pl-smi">SPScript</span>.<span class="pl-smi">templating</span>.<span class="pl-en">renderTemplate</span>(template, doc);
-                                            });
-                                            <span class="pl-c">//Output all the html to the page inside of our container</span>
-                                            <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#docs-webpart<span class="pl-pds">"</span></span>).<span class="pl-en">html</span>(html);
-                                      });</pre></div>
+        <div class="highlight highlight-source-js">
+        <pre><span class="pl-smi">dao</span>.<span class="pl-smi">search</span>.<span class="pl-en">people</span>(<span class="pl-s"><span class="pl-pds">'</span>petersen<span class="pl-pds">'</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">searchResults</span>){
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>There are <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">searchResults</span>.<span class="pl-smi">totalResults</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> people named 'andrew'<span class="pl-pds">"</span></span>);
+});</pre></div>
+     
         <footer class="site-footer">
             <span class="site-footer-owner"><a href="https://github.com/DroopyTersen/spscript">SPScript</a> is maintained by <a href="https://github.com/DroopyTersen">DroopyTersen</a>.</span>
             <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
